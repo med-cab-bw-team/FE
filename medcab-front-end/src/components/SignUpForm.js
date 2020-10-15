@@ -1,12 +1,35 @@
 // input for First name, last name, email, age ( can only sign up if 21 and older )
 
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import styled from "styled-components";
 
 const SignUpForm = () => {
-  
-    return (
+  {
+    /* -------- BUTTON STATE --------------- */
+  }
+
+  const [buttonOn, setButtonOn] = useState(true);
+
+  {
+    /* -------- HANDLE CHANGE FUNCTION --------------- */
+  }
+
+  const handleChanges = (e) => {
+    e.persist();
+  };
+
+  {
+    /* -------- ON SUBMIT FUNCTION --------------- */
+  }
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+    
+  };
+
+  return (
     <div>
-      <form onSubmit="">
+      <form onSubmit={handleChanges}>
         {/* -------- USERNAME --------------- */}
         <label htmlFor="username">
           username:
@@ -16,8 +39,7 @@ const SignUpForm = () => {
             type="text"
             value=""
             placeholder="username, please!"
-            onChange=""
-            data-cy=""
+            onChange={handleChanges}
           />
         </label>
         <br></br>
@@ -32,8 +54,7 @@ const SignUpForm = () => {
             type="text"
             value=""
             placeholder="first name, please!"
-            onChange=""
-            data-cy=""
+            onChange={handleChanges}
           />
         </label>
 
@@ -47,8 +68,7 @@ const SignUpForm = () => {
             type="text"
             value=""
             placeholder="last name, please!"
-            onChange=""
-            data-cy=""
+            onChange={handleChanges}
           />
         </label>
 
@@ -62,8 +82,7 @@ const SignUpForm = () => {
             type="email"
             value=""
             placeholder="email here, please."
-            onChange=""
-            data-cy="email"
+            onChange={handleChanges}
           />
         </label>
 
@@ -76,8 +95,7 @@ const SignUpForm = () => {
             type="text"
             value=""
             placeholder="please enter a password."
-            onChange=""
-            data-cy="password"
+            onChange={handleChanges}
           />
         </label>
 
@@ -88,11 +106,11 @@ const SignUpForm = () => {
             name="terms"
             type="checkbox"
             checked=""
-            onChange=""
+            onChange={handleChanges}
           />
         </label>
         <br></br>
-        <button type="submit" disabled="">
+        <button type="submit" disabled={buttonOn}>
           submit:
         </button>
       </form>
