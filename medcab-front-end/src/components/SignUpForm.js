@@ -3,10 +3,10 @@
 import React from "react";
 
 const SignUpForm = () => {
-  return (
+  
+    return (
     <div>
       <form onSubmit="">
-
         {/* -------- USERNAME --------------- */}
         <label htmlFor="username">
           username:
@@ -37,10 +37,10 @@ const SignUpForm = () => {
           />
         </label>
 
-         {/* -------- LAST NAME --------------- */}
-        
-         <label htmlFor="lastname">
-            last name:
+        {/* -------- LAST NAME --------------- */}
+
+        <label htmlFor="lastname">
+          last name:
           <input
             name="lastname"
             id="lastname"
