@@ -1,5 +1,7 @@
-import React from 'react'
+import React from "react";
 
-// Create login form here. 
-// input for : email/username & password 
-// submit button 
+const LoginForm = () => {
+  return <div></div>;
+};
+
+export default LoginForm;
