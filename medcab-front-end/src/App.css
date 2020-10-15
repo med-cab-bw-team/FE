@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  background-image: src="/Users/cisco/react2-lessons/FE/medcab-front-end/src/images/Login: Signup background .jpg";
+}
