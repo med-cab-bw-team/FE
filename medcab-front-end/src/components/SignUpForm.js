@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { connect } from 'react-redux';
+import { registrationStart, register } from '../actions/actions';
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
   {
     /* -------- BUTTON STATE --------------- */
   }
@@ -17,6 +19,7 @@ const SignUpForm = () => {
 
   const handleChanges = (e) => {
     e.persist();
+    props.registrationStart(e);
   };
 
   {
@@ -24,12 +27,12 @@ const SignUpForm = () => {
   }
   const onSubmitForm = (event) => {
     event.preventDefault();
-    
+    props.register();
   };
 
   return (
     <div>
-      <form onSubmit={handleChanges}>
+      <form onSubmit={onSubmitForm}>
         {/* -------- USERNAME --------------- */}
         <label htmlFor="username">
           username:
@@ -37,7 +40,7 @@ const SignUpForm = () => {
             name="username"
             id="username"
             type="text"
-            value=""
+            value={props.username}
             placeholder="username, please!"
             onChange={handleChanges}
           />
@@ -80,7 +83,7 @@ const SignUpForm = () => {
             name="email"
             id="email"
             type="email"
-            value=""
+            value={props.email}
             placeholder="email here, please."
             onChange={handleChanges}
           />
@@ -93,7 +96,7 @@ const SignUpForm = () => {
             username="password"
             id="password"
             type="text"
-            value=""
+            value={props.password}
             placeholder="please enter a password."
             onChange={handleChanges}
           />
@@ -117,5 +120,12 @@ const SignUpForm = () => {
     </div>
   );
 };
+    const mapStateToProps = (state) => {
+      return {
+        username: state.username,
+        email: state.email,
+        password: state.password
+      }
+    }
 
-export default SignUpForm;
+export default connect(mapStateToProps, {registrationStart, register})(SignUpForm);
