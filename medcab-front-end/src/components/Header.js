@@ -1,85 +1,75 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { ReactComponent as Explore } from '../explore.svg';
-// import { ReactComponent as Avatar } from '../avatar.svg';
-// import { ReactComponent as Compass } from '../compass.svg';
- 
+
 const Nav = styled.div`
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
-`;
- 
-const NavHeader = styled.div`
-  max-width: 1010px;
-  padding: 26px 20px;
-  width: 100%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.0975);
+  margin: 0%;
+  padding-bottom: 0px;
   display: flex;
+  justify-content: space-between;
+`;
+
+const NavHeader = styled.div`
+padding-left: 2.5%;
+display: flex;
+flex-direction: row;
+width: 50%;
+font-size: 2rem;
+text-align:left;
+ 
+ img{
+   padding: 2%;
+   width:50%;
+   height:auto;
+   max-width: 100px;
+   border-radius: 25px;
+ }
+`;
+
+const NavRight = styled.a`
+width:22.5%;
+margin-right: 5%;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
-`;
- 
-const NavLeft = styled.div`
-  width: 33.333%;
-  text-align: left;
-`;
- 
-const NavCenter = styled.div`
-  width: 33.333%;
-  text-align: center;
-`;
- 
-const Input = styled.input`
-  font-size: 16px;
-  border: solid 1px #dbdbdb;
-  border-radius: 3px;
-  color: #262626;
-  padding: 7px 33px;
-  border-radius: 3px;
-  color: #999;
-  cursor: text;
-  font-size: 14px;
-  font-weight: 300;
-  text-align: center;
-  background: #fafafa;
- 
-  &:active,
-  &:focus {
-    text-align: left;
+  ${'' /* border: 3px solid green; */}
+  a{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    color:white;
+    background-color: #009760;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    padding-right:5%;
+    padding-left:5%;
+    &:hover{
+      border: 1px solid #009760;
+      background-color: white;
+      color:green;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
   }
 `;
- 
-const NavRight = styled.div`
-  width: 33.333%;
-  text-align: right;
- 
-  svg {
-    margin-right: 20px;
-  }
-`;
- 
-const MenuLink = styled.a``;
- 
+
+
+
 function Header() {
   return (
     <Nav>
+   
       <NavHeader>
-        <NavLeft>The MedCab </NavLeft>
- 
- 
-        <NavRight>
-          <MenuLink href="#">
-            Stuff
-          </MenuLink>
- 
-          <MenuLink href="#">
-            {/* <Explore /> */}
-          </MenuLink>
- 
-          <MenuLink href="#">
-            {/* <Avatar /> */}
-          </MenuLink>
-        </NavRight>
+         <img src="https://cdn.pixabay.com/photo/2017/04/30/19/42/cannabis-2273795_1280.png"/>
+        <h3> The MedCab </h3>
       </NavHeader>
+ 
+     
+          <NavRight>
+           <a href="#"> Login </a> 
+           <a href="#"> Sign up </a> 
+          </NavRight>
     </Nav>
   );
 }
