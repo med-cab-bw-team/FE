@@ -19,11 +19,11 @@ function App() {
       <Header />
       <CarouselImg />
       <Switch>
-        <h1> Giving you the 411 on your local 420 </h1>
+        {/* <h1> Giving you the 411 on your local 420 </h1> */}
         <PrivateRoute exact path="/home" component={dummyComp} />
         <PrivateRoute exact path="/about" component={dummyComp} />
-        <Route exact path="/signup" component={<SignUpForm />} />
-        <Route exact path="/login" component={<LoginForm />} />
+        <Route exact path="/signup" component={SignUpForm } />
+        <Route exact path="/login" component={LoginForm } />
       </Switch>
       {/* <footer>
         Stuff
