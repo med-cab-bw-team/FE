@@ -1,17 +1,11 @@
 import React from "react";
 
 const LoginForm = () => {
-
-
-
-
-
-  
   {
     /* -------- BUTTON STATE --------------- */
   }
 
-  const [buttonOn, setButtonOn] = useState(true);
+  // const [buttonOn, setButtonOn] = useState(true);
 
   {
     /* -------- HANDLE CHANGE FUNCTION --------------- */
@@ -26,7 +20,6 @@ const LoginForm = () => {
   }
   const onSubmitForm = (event) => {
     event.preventDefault();
-    
   };
 
   return (
@@ -61,7 +54,7 @@ const LoginForm = () => {
 
         <br></br>
 
-        <button type="submit" disabled={buttonOn}>
+        <button type="submit" disabled="">
           submit:
         </button>
       </form>
