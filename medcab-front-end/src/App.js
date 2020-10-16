@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
-
-
+import Header from './components/Header'
 import './App.css';
+import styled from 'styled-components';
 
 const dummyComp = () => {
   console.log("stuff")
@@ -14,9 +14,13 @@ const dummyComp = () => {
   )
 }
 
+
 function App() {
+
   return (
     <div className="App">
+    
+    <Header/>
       <Switch> 
         <h1> Giving you the 411 on your local 420 </h1>
         <PrivateRoute exact path="/home" component={dummyComp}/>
@@ -24,6 +28,10 @@ function App() {
         <Route exact path="/signup" component={dummyComp}/>
         <Route exact path="/login" component={dummyComp}/> 
       </Switch>
+      {/* <footer>
+        Stuff
+      </footer> */}
+
     </div>
   );
 }
