@@ -67,8 +67,8 @@ function Header() {
  
      
           <NavRight>
-           <a href="#"> Login </a> 
-           <a href="#"> Sign up </a> 
+           <a href="/login"> Login </a> 
+           <a href="/signup"> Sign up </a> 
           </NavRight>
     </Nav>
   );

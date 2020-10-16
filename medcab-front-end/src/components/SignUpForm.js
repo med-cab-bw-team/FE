@@ -29,10 +29,12 @@ const SignUpForm = (props) => {
     event.preventDefault();
     props.register();
   };
+  console.log("signupfrom")
 
   return (
     <div>
-      <form onSubmit={onSubmitForm}>
+    
+      <form onSubmit={handleChanges}>
         {/* -------- USERNAME --------------- */}
         <label htmlFor="username">
           username:
