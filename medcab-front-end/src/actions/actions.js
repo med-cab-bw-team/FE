@@ -21,9 +21,11 @@ export const register = (state) => (dispatch) => {
     } )
         .then(res => {
             console.log(res);
-            dispatch({type: REGISTRATION_SUCCESS})
+            dispatch({type: REGISTRATION_SUCCESS, payload: res.data.user});
+            // localStorage.setItem('token', res.data.token)
         })
         .catch(err => {
             console.error(err);
+            dispatch({type: REGISTRATION_FAIL, payload: err});
         })
 } 
