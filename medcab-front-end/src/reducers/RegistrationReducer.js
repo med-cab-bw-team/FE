@@ -17,7 +17,7 @@ export const RegistrationReducer = (state = initialState, action) => {
         case REGISTRATION_START:
             return {
                 ...state,
-                isRegistering: true,
+                // isRegistering: true,
                 [action.payload.targetName]: action.payload.targetValue
             }
         case REGISTRATION_SUCCESS:
@@ -34,9 +34,7 @@ export const RegistrationReducer = (state = initialState, action) => {
                 error: action.payload
             }
         default:
-            return {
-                state
-            }
+            return state
     }
 
 }

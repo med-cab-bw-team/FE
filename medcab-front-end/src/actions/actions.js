@@ -6,19 +6,17 @@ export const REGISTRATION_FAIL = 'REGISTRATION_FAIL';
 
 
 export const registrationStart = (e) => (dispatch) => {
+    // console.log(e);
     dispatch({type: REGISTRATION_START, payload: {
-        targetName: e.target.targetName,
+        targetName: e.target.name,
         targetValue: e.target.value
     }})
 }
 
 
 export const register = (state) => (dispatch) => {
-    axios.post('https://med-cab-bw.herokuapp.com/api/auth/register', {
-        username: state.username,
-        password: state.password,
-        email: state.email
-    } )
+    console.log(state);
+    axios.post('https://med-cab-bw.herokuapp.com/api/auth/register', state )
         .then(res => {
             console.log(res);
             dispatch({type: REGISTRATION_SUCCESS, payload: res.data.user});
