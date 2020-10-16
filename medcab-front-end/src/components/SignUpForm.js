@@ -26,9 +26,11 @@ const SignUpForm = () => {
     event.preventDefault();
     
   };
+  console.log("signupfrom")
 
   return (
     <div>
+    
       <form onSubmit={handleChanges}>
         {/* -------- USERNAME --------------- */}
         <label htmlFor="username">
