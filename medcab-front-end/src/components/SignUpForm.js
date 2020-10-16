@@ -29,6 +29,7 @@ const SignUpForm = (props) => {
     event.preventDefault();
     props.register();
   };
+  console.log("signupfrom")
 
   return (
     <div>
