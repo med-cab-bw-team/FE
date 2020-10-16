@@ -4,6 +4,8 @@ import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header'
 import './App.css';
 import styled from 'styled-components';
+import {CarouselImg} from './components/carousel'
+
 
 const dummyComp = () => {
   console.log("stuff")
@@ -21,6 +23,7 @@ function App() {
     <div className="App">
     
     <Header/>
+    <CarouselImg/>
       <Switch> 
         <h1> Giving you the 411 on your local 420 </h1>
         <PrivateRoute exact path="/home" component={dummyComp}/>

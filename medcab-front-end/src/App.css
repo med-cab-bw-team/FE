@@ -41,3 +41,21 @@
   background-image: src="/Users/cisco/react2-lessons/FE/medcab-front-end/src/images/Login: Signup background .jpg";
 }
 
+/* img {
+  width: 100%;
+} */
+
+.carousel img{
+  width: 100%;
+  border-radius: 25px;
+}
+.carousel {
+  padding-top: 2%;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right:2%;
+  border: 2px solid #009760;
+  border-radius: 25px;
+  box-shadow: 5px 5px #009760;
+}
+/* #ece5e5 */
