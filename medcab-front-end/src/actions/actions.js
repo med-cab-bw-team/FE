@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export const REGISTRATION_START = 'REGISTRATION_START';
 export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
 export const REGISTRATION_FAIL = 'REGISTRATION_FAIL';
@@ -40,15 +41,20 @@ export const loginStart = (e) => (dispatch) => {
     }})
 }
 
+
 export const login = (state) => (dispatch) => {
+   
     console.log(state);
     axios.post('https://med-cab-bw.herokuapp.com/api/auth/login', state)
         .then(res => {
-            console.log(res);
-            dispatch({type: LOGIN_SUCCESS, payload: res.data.token})
+            console.log(res, "it's working?");
+            dispatch({type: LOGIN_SUCCESS, payload: res.data.token});
+            localStorage.setItem('token', res.data.token)
+            
         })
         .catch(err => {
             console.error(err);
             dispatch({type: LOGIN_FAIL, payload: err})
+            alert("Username or Password are incorrect")
         })
 }

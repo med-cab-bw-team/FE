@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
 import { loginStart, login } from '../actions/actions';
+import {useHistory} from 'react-router-dom';
+import { bindActionCreators } from "redux";
+import {axiosWithAuth} from '../api/axiosWithAuth';
+import Header from './Header'
+
 
 const StyledH1 = styled.h1`
   border-bottom: 3px solid #029760;
@@ -9,33 +14,6 @@ const StyledH1 = styled.h1`
   margin: 0 auto;
   margin-bottom: 10px;
 `;
-
-// const NavRight = styled.a`
-// width:22.5%;
-// margin-right: 5%;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   ${'' /* border: 3px solid green; */}
-//   a{
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     text-decoration: none;
-//     border-radius: 10px;
-//     background-color: #009760;
-//     padding-top: 2.5%;
-//     padding-bottom: 2.5%;
-//     padding-right:5%;
-//     padding-left:5%;
-//     &:hover{
-//       border: 1px solid #009760;
-//       background-color: white;
-//       color:green;
-//       font-size: 1.2rem;
-//       font-weight: bold;
-//     }
-//   }
-// `;
 
 const ButtonStyling = styled.button`
   border: 1px solid black;
@@ -80,6 +58,12 @@ const StyledForm = styled.div`
 `;
 
 const LoginForm = (props) => {
+  const history = useHistory();
+  const loginState = useState({
+        username:"",
+        password:""
+    });
+
   {
     /* -------- BUTTON STATE --------------- */
   }
@@ -98,13 +82,21 @@ const LoginForm = (props) => {
   {
     /* -------- ON SUBMIT FUNCTION --------------- */
   }
+  
   const onSubmitForm = (event) => {
     event.preventDefault();
-    props.login({username: props.username, password: props.password});
+    props.login({username: props.username, password: props.password}); 
+    setTimeout(()=>{
+
+      history.push('/')
+    },1000)
+    
   };
 
   return (
+    
     <div>
+    <Header/>
       <br></br>
       <StyledH1>login</StyledH1>
       <StyledForm>
