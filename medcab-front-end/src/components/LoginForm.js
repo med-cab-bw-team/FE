@@ -16,20 +16,24 @@ const StyledH1 = styled.h1`
 `;
 
 const ButtonStyling = styled.button`
-  border: 1px solid black;
-  border-radius: 10px;
-  color: white;
-  background-color: #009760;
+  font-size: 1rem;
+    ${'' /* border: 1px solid black;  */}
+  border-radius: 35px;
+  color: #009760;
+  background-color: white;
   padding-top: 2%;
-padding-bottom: 2%;
-padding-right:5%;
-padding-left:5%;
+  padding-bottom: 2%;
+  padding-right:10%;
+  padding-left:10%;
+  transition: all .25s cubic-bezier(.02, .01, .47, 1);
+  font-family: inherit;
+  font-weight: 700;
 &:hover{
   border: 1px solid #009760;
   background-color: white;
   color:green;
-  font-size: 1rem;
-  font-weight: bold;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, .16);
+  transform: translate(0, -5px);
 `;
 
 const StyledForm = styled.div`
@@ -37,7 +41,7 @@ const StyledForm = styled.div`
   border: 1px solid #009760;
   border-radius: 8px;
   flex-direction: column;
-  background: #83cf5b;
+  background: #009760;
   width: 50%;
   padding-bottom: 10%;
   padding-top: 1%;
@@ -87,10 +91,8 @@ const LoginForm = (props) => {
     event.preventDefault();
     props.login({username: props.username, password: props.password}); 
     setTimeout(()=>{
-
       history.push('/')
-    },1000)
-    
+    },1500)
   };
 
   return (
@@ -132,7 +134,7 @@ const LoginForm = (props) => {
           <br></br>
           <img src="https://webstockreview.net/images/marijuana-clipart-pdf-9.png" />
           <ButtonStyling type="submit" disabled="">
-            submit: {""}
+            submit {""}
           </ButtonStyling>
           <img src="https://webstockreview.net/images/marijuana-clipart-pdf-9.png" />
         </form>
