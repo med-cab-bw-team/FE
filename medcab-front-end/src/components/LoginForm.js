@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from 'react-redux';
+import { loginStart, login } from '../actions/actions';
 
 const StyledH1 = styled.h1`
   border-bottom: 3px solid #029760;
@@ -77,7 +79,7 @@ const StyledForm = styled.div`
   }
 `;
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   {
     /* -------- BUTTON STATE --------------- */
   }
@@ -90,6 +92,7 @@ const LoginForm = () => {
 
   const handleChanges = (e) => {
     e.persist();
+    props.loginStart(e);
   };
 
   {
@@ -97,6 +100,7 @@ const LoginForm = () => {
   }
   const onSubmitForm = (event) => {
     event.preventDefault();
+    props.login({username: props.username, password: props.password});
   };
 
   return (
@@ -104,15 +108,15 @@ const LoginForm = () => {
       <br></br>
       <StyledH1>login</StyledH1>
       <StyledForm>
-        <form onSubmit={handleChanges}>
+        <form onSubmit={onSubmitForm}>
           {/* -------- USERNAME --------------- */}
           <label htmlFor="username">
-            username: {""}
+            username:
             <input
               name="username"
               id="username"
               type="text"
-              value=""
+              value={props.username}
               placeholder="username, please!"
               onChange={handleChanges}
             />
@@ -122,12 +126,12 @@ const LoginForm = () => {
 
           {/* -------- PASSWORD --------------- */}
           <label htmlFor="password">
-            password: {""}
+            password:
             <input
-              username="password"
+              name="password"
               id="password"
               type="text"
-              value=""
+              value={props.password}
               placeholder="please enter a password."
               onChange={handleChanges}
             />
@@ -146,4 +150,12 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+const mapStateToProps = (state) => {
+  return {
+    username: state.login.username,
+    password: state.login.password,
+    isLoggedIn: state.login.isLoggedIn
+  }
+}
+
+export default connect(mapStateToProps, {loginStart, login})(LoginForm);
