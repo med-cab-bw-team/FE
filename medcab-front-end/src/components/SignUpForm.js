@@ -5,6 +5,8 @@ import axios from "axios";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { registrationStart, register } from "../actions/actions";
+import Header from './Header'
+
 
 const StyledH1 = styled.h1`
   border-bottom: 3px solid #029760;
@@ -81,6 +83,7 @@ const SignUpForm = (props) => {
 
   return (
     <div>
+    <Header/>
       <br></br>
       <StyledH1>registration</StyledH1>
       <StyledForm>
