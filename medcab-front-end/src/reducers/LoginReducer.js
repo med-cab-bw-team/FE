@@ -17,7 +17,7 @@ export const LoginReducer = (state = initialUser, action) => {
                 [action.payload.targetName]: action.payload.targetValue
             }
         case LOGIN_SUCCESS:
-            localStorage.setItem('token', action.payload)
+            localStorage.setItem('token', action.payload);
             return {
                 ...state,
                 isLoggedIn: true

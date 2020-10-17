@@ -88,7 +88,7 @@ const LoginForm = (props) => {
 
   const handleChanges = (e) => {
     e.persist();
-    loginStart(e);
+    props.loginStart(e);
   };
 
   {
@@ -96,7 +96,7 @@ const LoginForm = (props) => {
   }
   const onSubmitForm = (event) => {
     event.preventDefault();
-    login({username: props.username, password: props.password})
+    props.login({username: props.username, password: props.password});
   };
 
   return (
@@ -104,7 +104,7 @@ const LoginForm = (props) => {
       <br></br>
       <StyledH1>login</StyledH1>
       <StyledForm>
-        <form onSubmit={handleChanges}>
+        <form onSubmit={onSubmitForm}>
           {/* -------- USERNAME --------------- */}
           <label htmlFor="username">
             username:
@@ -124,7 +124,7 @@ const LoginForm = (props) => {
           <label htmlFor="password">
             password:
             <input
-              username="password"
+              name="password"
               id="password"
               type="text"
               value={props.password}

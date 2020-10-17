@@ -45,7 +45,7 @@ export const login = (state) => (dispatch) => {
     axios.post('https://med-cab-bw.herokuapp.com/api/auth/login', state)
         .then(res => {
             console.log(res);
-            dispatch({type: LOGIN_SUCCESS, payload: res})
+            dispatch({type: LOGIN_SUCCESS, payload: res.data.token})
         })
         .catch(err => {
             console.error(err);
