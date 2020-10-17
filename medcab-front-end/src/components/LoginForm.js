@@ -58,11 +58,15 @@ const StyledForm = styled.div`
   border-radius: 8px;
   flex-direction: column;
   background: #83cf5b;
-  width: 500px;
+  width: 50%;
+  padding-bottom: 10%;
+  padding-top: 1%;
   margin: 0 auto;
   padding-top: 20px;
   justify-content: space-around;
   margin-bottom: 30px;
+  padding-top:50px;
+
   img {
     padding: 2%;
 

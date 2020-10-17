@@ -6,6 +6,8 @@ import "./App.css";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 import {Home} from './components/Home'
+import {Footer} from './components/Footer'
+
 
 const dummyComp = () => {
   console.log("stuff");
@@ -23,9 +25,8 @@ function App() {
         <Route exact path="/signup" component={SignUpForm } />
         <Route exact path="/login" component={LoginForm } />
       </Switch>
-      {/* <footer>
-        Stuff
-      </footer> */}
+      <Footer/>
+
     </div>
   );
 }
