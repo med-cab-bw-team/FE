@@ -52,11 +52,13 @@ const StyledForm = styled.div`
 `;
 
 const SignUpForm = (props) => {
+  // console.log(props);
+  // const user = props;
   {
     /* -------- BUTTON STATE --------------- */
   }
 
-  const [buttonOn, setButtonOn] = useState(true);
+  // const [buttonOn, setButtonOn] = useState(true);
 
   {
     /* -------- HANDLE CHANGE FUNCTION --------------- */
@@ -65,6 +67,7 @@ const SignUpForm = (props) => {
   const handleChanges = (e) => {
     e.persist();
     props.registrationStart(e);
+    console.log(props);
   };
 
   {
@@ -72,7 +75,7 @@ const SignUpForm = (props) => {
   }
   const onSubmitForm = (event) => {
     event.preventDefault();
-    props.register();
+    props.register({username: props.username, password: props.password, email: props.email});
   };
   console.log("signupfrom");
 
@@ -84,7 +87,7 @@ const SignUpForm = (props) => {
         <form onSubmit={onSubmitForm}>
           {/* -------- USERNAME --------------- */}
           <label htmlFor="username">
-            username: {""}
+            username: 
             <input
               name="username"
               id="username"
@@ -99,13 +102,13 @@ const SignUpForm = (props) => {
 
           {/* -------- FIRST NAME --------------- */}
 
-          <label htmlFor="firstname">
-            last name: {""}
+          <label htmlFor="firstName">
+            first name:
             <input
-              name="firstname"
+              name="firstName"
               id="firstname"
               type="text"
-              value=""
+              value={props.firstName}
               placeholder="first name, please!"
               onChange={handleChanges}
             />
@@ -114,13 +117,13 @@ const SignUpForm = (props) => {
           <br></br>
           {/* -------- LAST NAME --------------- */}
 
-          <label htmlFor="lastname">
-            last name: {""}
+          <label htmlFor="lastName">
+            last name:
             <input
-              name="lastname"
+              name="lastName"
               id="lastname"
               type="text"
-              value=""
+              value={props.lastName}
               placeholder="last name, please!"
               onChange={handleChanges}
             />
@@ -130,7 +133,7 @@ const SignUpForm = (props) => {
           <br></br>
           {/* -------- EMAIL --------------- */}
           <label htmlFor="email">
-            e-mail: {""}
+            e-mail:
             <input
               name="email"
               id="email"
@@ -144,9 +147,9 @@ const SignUpForm = (props) => {
           <br></br>
           {/* -------- PASSWORD --------------- */}
           <label htmlFor="password">
-            password: {""}
+            password:
             <input
-              username="password"
+              name="password"
               id="password"
               type="text"
               value={props.password}
@@ -157,19 +160,19 @@ const SignUpForm = (props) => {
           <br></br>
           <img src="https://webstockreview.net/images/marijuana-clipart-pdf-9.png" />
           <label htmlFor="terms" className="terms">
-            21 or older? {""}
+            21 or older?
             <input
               id="terms"
               name="terms"
               type="checkbox"
-              checked=""
+              checked={props.isOfAge}
               onChange={handleChanges}
             />
           </label>
           <img src="https://webstockreview.net/images/marijuana-clipart-pdf-9.png" />
           <br></br>
           <br></br>
-          <ButtonStyling type="submit" disabled={buttonOn}>
+          <ButtonStyling type="submit" >
             submit:
           </ButtonStyling>
         </form>
@@ -180,9 +183,12 @@ const SignUpForm = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    username: state.username,
-    email: state.email,
-    password: state.password,
+        username: state.registration.username,
+        email: state.registration.email,
+        password: state.registration.password,
+        firstName: state.registration.firstName,
+        lastName: state.registration.lastName,
+        isOfAge: state.registration.isOfAge
   };
 };
 
