@@ -77,7 +77,7 @@ const SignUpForm = (props) => {
   }
   const onSubmitForm = (event) => {
     event.preventDefault();
-    props.register({username: props.username, password: props.password, email: props.email});
+    props.register({username: props.username, password: props.password, email: props.email, firstName: props.firstName, lastName: props.lastName, currentCity: props.currentCity, state_abbreviation: props.state_abbreviation});
   };
   console.log("signupfrom");
 
@@ -162,15 +162,13 @@ const SignUpForm = (props) => {
           </label>
           <br></br>
           <img src="https://webstockreview.net/images/marijuana-clipart-pdf-9.png" />
-          <label htmlFor="terms" className="terms">
-            21 or older?
-            <input
-              id="terms"
-              name="terms"
-              type="checkbox"
-              checked={props.isOfAge}
-              onChange={handleChanges}
-            />
+          <label htmlFor='currentCity'>
+            Current City:
+            <input type="text" name="currentCity" id="currentCity" value={props.currentCity} onChange={handleChanges} />
+          </label>
+          <label htmlFor='state_abbreviation'>
+            State:
+            <input type='text' name='state_abbreviation' id='state_abbreviation' value={props.state_abbreviation} onChange={handleChanges}  />
           </label>
           <img src="https://webstockreview.net/images/marijuana-clipart-pdf-9.png" />
           <br></br>
@@ -191,6 +189,8 @@ const mapStateToProps = (state) => {
         password: state.registration.password,
         firstName: state.registration.firstName,
         lastName: state.registration.lastName,
+        currentCity: state.registration.currentCity,
+        state_abbreviation: state.registration.state_abbreviation,
         isOfAge: state.registration.isOfAge
   };
 };
