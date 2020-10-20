@@ -41,7 +41,7 @@ const StyledForm = styled.div`
   border: 1px solid #009760;
   border-radius: 8px;
   flex-direction: column;
-  background: #009760;
+  background: rgb(0, 151, 96, .25);
   width: 50%;
   padding-bottom: 10%;
   padding-top: 1%;
@@ -53,7 +53,6 @@ const StyledForm = styled.div`
 
   img {
     padding: 2%;
-
     width: 50%;
     height: auto;
     max-width: 25px;
