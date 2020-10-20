@@ -1,4 +1,4 @@
-import {REGISTRATION_START, REGISTRATION_SUCCESS, REGISTRATION_FAIL} from '../actions/actions';
+import {REGISTRATION_START, REGISTRATION_SUCCESS, REGISTRATION_FAIL, RECOMMEND_START, RECOMMEND_SUCCESS, RECOMMEND_FAIL} from '../actions/actions';
 
 
  const initialState = {
@@ -11,6 +11,13 @@ import {REGISTRATION_START, REGISTRATION_SUCCESS, REGISTRATION_FAIL} from '../ac
     state_abbreviation: '',
     isOfAge: false,
     isRegistering: false,
+    error: ''
+}
+
+const initialRecommend = {
+    symptom: '',
+    strain: '',
+    flavor: '',
     error: ''
 }
 
@@ -39,4 +46,23 @@ export const RegistrationReducer = (state = initialState, action) => {
             return state
     }
 
+}
+
+export const RecommendationReducer = (state = initialRecommend, action) => {
+    switch(action.type) {
+        case RECOMMEND_START:
+            return {
+                ...state,
+                [action.payload.targetName]: action.payload.targetValue
+            }
+        case RECOMMEND_SUCCESS:
+            return state
+        case RECOMMEND_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
+        default:
+            return state
+    }
 }
