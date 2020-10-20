@@ -4,6 +4,8 @@ import HeaderAuth from './HeaderAuth'
 import styled from 'styled-components'
 import { FaCommentAlt, FaThumbsUp, FaRegEye } from 'react-icons/fa'
 import Card from './Card'
+import img from '../images/loginPic.jpg'
+
 
 const StyledRoot = styled.div`
   padding: 50px 12px;
@@ -13,8 +15,20 @@ const StyledContainer = styled.div`
   max-width: 550px;
   width:35%;
   margin: auto;
-  color: black
+  color: black;
 `
+const HomeDiv = styled.div `
+background-image: url(${img}) ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment:fixed;
+  
+
+`;
 export const Home = () => {
 
 
@@ -51,7 +65,7 @@ export const Home = () => {
 
 
     return (
-        <div>
+        <HomeDiv>
             <HeaderAuth/>
             <CarouselImg /> 
             <StyledRoot>
@@ -63,7 +77,7 @@ export const Home = () => {
         />
       </StyledContainer>
     </StyledRoot>
-        </div>
+        </HomeDiv>
     )
 }
 
