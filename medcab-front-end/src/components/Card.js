@@ -5,8 +5,10 @@ const StyledContainer = styled.div`
   border: 1px solid black;
   padding: 25px 12px 18px;
   background: linear-gradient(green);
+  background: rgb(0, 151, 96, .85);
   color: black;
   border-radius: 25px;
+
   img{
       width: 100%;
       border-radius: 20px;

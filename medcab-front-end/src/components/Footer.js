@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Foot = styled.div `
     color: red;
     background-color: #009760;
-    margin-top: 15%;
+    ${'' /* margin-top: 15%; */}
     padding-top:10%;
 `
 
