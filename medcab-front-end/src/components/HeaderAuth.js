@@ -19,9 +19,9 @@ font-size: 2rem;
 text-align:left;
  
  img{
+  max-height: 100px;
    padding: 2%;
    width:50%;
-   height:auto;
    max-width: 100px;
    border-radius: 25px;
  }

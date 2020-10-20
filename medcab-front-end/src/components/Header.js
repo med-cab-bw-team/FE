@@ -21,7 +21,7 @@ text-align:left;
  img{
    padding: 2%;
    width:50%;
-   height:auto;
+   max-height: 100px;
    max-width: 100px;
    border-radius: 25px;
  }
