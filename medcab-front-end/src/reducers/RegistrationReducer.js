@@ -7,6 +7,8 @@ import {REGISTRATION_START, REGISTRATION_SUCCESS, REGISTRATION_FAIL} from '../ac
     email: '',
     firstName: '',
     lastName: '',
+    currentCity: '',
+    state_abbreviation: '',
     isOfAge: false,
     isRegistering: false,
     error: ''
