@@ -56,6 +56,7 @@ const ButtonStyling = styled.button`
 
 
  const RecForm = (props) => {
+    const history = useHistory();
 
     const handleChanges = e => {
       props.recommendStart(e);
@@ -65,6 +66,9 @@ const ButtonStyling = styled.button`
     const handleSubmit = e => {
         e.preventDefault();
         props.recommendation(`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`);
+        setTimeout(()=>{
+      history.push('/login')
+    },1500)
     }
 
     return(
@@ -82,14 +86,7 @@ const ButtonStyling = styled.button`
                     onChange = {handleChanges}
                     />
                 </label>
-                <label htmlFor= "strain">
-                    Choose a Strain:
-                   <select name='strain' id='strain' onChange = {handleChanges}> 
-                       <option value="sativa"> Sativa </option>
-                       <option value="hybrid"> Hybrid </option>
-                       <option value="indica"> Indica </option>
-                   </select>
-                </label>
+                <br></br>
                 <br></br>
                 <label htmlFor= "flavor">
                     Choose a flavor: 
@@ -105,7 +102,7 @@ const ButtonStyling = styled.button`
                 <br></br>
                 <label htmlFor= "strain">
                     Choose a Strain:
-                   <select>
+                   <select name='strain' id='strain' onChange = {handleChanges}> 
                        <option value="sativa"> Sativa </option>
                        <option value="hybrid"> Hybrid </option>
                        <option value="indica"> Indica </option>

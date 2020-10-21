@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { registrationStart, register } from "../actions/actions";
 import Header from './Header'
-
+import {useHistory} from 'react-router-dom';
 
 const StyledH1 = styled.h1`
   border-bottom: 3px solid #029760;
@@ -56,6 +56,7 @@ const StyledForm = styled.div`
 const SignUpForm = (props) => {
   // console.log(props);
   // const user = props;
+  const history = useHistory();
   {
     /* -------- BUTTON STATE --------------- */
   }
@@ -78,6 +79,11 @@ const SignUpForm = (props) => {
   const onSubmitForm = (event) => {
     event.preventDefault();
     props.register({username: props.username, password: props.password, email: props.email, firstName: props.firstName, lastName: props.lastName, currentCity: props.currentCity, state_abbreviation: props.state_abbreviation});
+    setTimeout(()=>{
+      history.push('/weed4me')
+    },1500)
+    
+    
   };
   console.log("signupfrom");
 

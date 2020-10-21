@@ -41,7 +41,7 @@ const StyledForm = styled.div`
   border: 1px solid #009760;
   border-radius: 8px;
   flex-direction: column;
-  background: rgb(0, 151, 96, .25);
+  background: rgb(0, 151, 96, .55);
   width: 50%;
   padding-bottom: 10%;
   padding-top: 1%;
