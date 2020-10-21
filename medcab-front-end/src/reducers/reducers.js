@@ -3,10 +3,11 @@ import {
     combineReducers
   } from "redux";
 
-  import { RegistrationReducer } from './RegistrationReducer';
+  import { RegistrationReducer, RecommendationReducer } from './RegistrationReducer';
   import { LoginReducer } from './LoginReducer';
 
 export const rootReducer = combineReducers({
     registration: RegistrationReducer,
-    login: LoginReducer
+    login: LoginReducer,
+    recommendation: RecommendationReducer
   })

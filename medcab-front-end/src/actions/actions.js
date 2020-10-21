@@ -6,6 +6,11 @@ export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
 export const REGISTRATION_FAIL = 'REGISTRATION_FAIL';
 
 
+export const RECOMMEND_START = 'RECOMMEND_START';
+export const RECOMMEND_SUCCESS = 'RECOMMEND_SUCCESS';
+export const RECOMMEND_FAIL = 'RECOMMEND_FAIL';
+
+
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
@@ -57,4 +62,17 @@ export const login = (state) => (dispatch) => {
             dispatch({type: LOGIN_FAIL, payload: err})
             alert("Username or Password are incorrect")
         })
+}
+
+
+export const recommendStart = (e) => (dispatch) => {
+    dispatch({type: RECOMMEND_START, payload: {
+        targetName: e.target.name,
+        targetValue: e.target.value
+    }})
+}
+
+export const recommendation = (state) => (dispatch) => {
+    console.log(state);
+    dispatch({type: RECOMMEND_SUCCESS, payload: state});
 }

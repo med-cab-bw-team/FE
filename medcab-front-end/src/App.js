@@ -7,7 +7,7 @@ import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 import {Home} from './components/Home'
 import {Footer} from './components/Footer'
-import {RecForm} from './components/RecForm'
+import RecForm from './components/RecForm'
 
 const dummyComp = () => {
   console.log("stuff");
