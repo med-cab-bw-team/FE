@@ -79,14 +79,8 @@ export const RecForm = (props) => {
                     onChange = {handleChanges}
                     />
                 </label>
-                <label htmlFor= "strain">
-                    Choose a Strain:
-                   <select>
-                       <option value="sativa"> Sativa </option>
-                       <option value="hybrid"> Hybrid </option>
-                       <option value="indica"> Indica </option>
-                   </select>
-                </label>
+                <br></br>
+             
                 <br></br>
                 <label htmlFor= "flavor">
                     Choose a flavor: 
@@ -97,6 +91,16 @@ export const RecForm = (props) => {
                     // value = {props.flavor}
                     onChange = {handleChanges}
                     />
+                </label>
+                <br></br>
+                <br></br>
+                <label htmlFor= "strain">
+                    Choose a Strain:
+                   <select>
+                       <option value="sativa"> Sativa </option>
+                       <option value="hybrid"> Hybrid </option>
+                       <option value="indica"> Indica </option>
+                   </select>
                 </label>
                 <br></br>
 
