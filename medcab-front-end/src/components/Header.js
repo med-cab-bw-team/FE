@@ -61,7 +61,7 @@ function Header() {
     <Nav>
    
       <NavHeader>
-         <img src="https://cdn.pixabay.com/photo/2017/04/30/19/42/cannabis-2273795_1280.png"/>
+         <img src="https://cdn.pixabay.com/photo/2017/04/30/19/42/cannabis-2273795_1280.png" />
         <h3> The MedCab </h3>
       </NavHeader>
  

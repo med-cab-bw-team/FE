@@ -15,8 +15,16 @@ padding-left: 2.5%;
 display: flex;
 flex-direction: row;
 width: 50%;
-font-size: 2rem;
+
 text-align:left;
+a{
+  font-size: 2rem;
+  font-weight: bold;
+text-decoration:none;
+color: black;
+margin-top:25px;
+}
+
  
  img{
   max-height: 100px;
@@ -62,7 +70,7 @@ function HeaderAuth() {
    
       <NavHeader>
          <img src="https://cdn.pixabay.com/photo/2017/04/30/19/42/cannabis-2273795_1280.png"/>
-        <h3> The MedCab </h3>
+        <a  href="/" > The MedCab </a>
       </NavHeader>
  
      
