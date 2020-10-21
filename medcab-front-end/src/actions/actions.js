@@ -74,7 +74,7 @@ export const recommendStart = (e) => (dispatch) => {
 
 export const recommendation = (state) => (dispatch) => {
     console.log(state);
-    axios.post('https://greengardenapi.herokuapp.com/recommendation/', state)
+    axios.get(`https://greengardenapi.herokuapp.com/recommendation/${state}`)
         .then(res => {
             console.log(res);
             dispatch({type: RECOMMEND_SUCCESS, payload: res});
