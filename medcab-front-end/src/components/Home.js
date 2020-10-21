@@ -26,6 +26,7 @@ background-image: url(${img}) ;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment:fixed;
+  margin-bottom: 45px;
   
 
 `;
