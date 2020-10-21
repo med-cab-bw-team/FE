@@ -3,7 +3,10 @@
 import React, {useState} from 'react';
 import {useHistory} from "react-router";
 import styled from "styled-components";
-import HeaderAuth from './HeaderAuth'
+import HeaderAuth from './HeaderAuth';
+import {connect} from 'react-redux';
+
+import {recommendStart, recommendation} from '../actions/actions';
 
 const RecStyled = styled.div `
 
@@ -52,16 +55,16 @@ const ButtonStyling = styled.button`
 
 
 
-export const RecForm = (props) => {
+ const RecForm = (props) => {
 
     const handleChanges = e => {
-  //STUFFF
+      props.recommendStart(e);
     };
 
 
     const handleSubmit = e => {
         e.preventDefault();
-     
+        props.recommendation(`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`);
     }
 
     return(
@@ -73,15 +76,15 @@ export const RecForm = (props) => {
                     Please describe your symptom: 
                     <input 
                     type ="text"
-                    name="symptoms"
+                    name="symptom"
                     placeholder = "Ex: backpain"
-                    // value = {props.symptom}
+                    value = {props.symptom}
                     onChange = {handleChanges}
                     />
                 </label>
                 <label htmlFor= "strain">
                     Choose a Strain:
-                   <select>
+                   <select name='strain' id='strain' onChange = {handleChanges}> 
                        <option value="sativa"> Sativa </option>
                        <option value="hybrid"> Hybrid </option>
                        <option value="indica"> Indica </option>
@@ -92,9 +95,9 @@ export const RecForm = (props) => {
                     Choose a flavor: 
                     <input 
                     type ="text"
-                    name="ex: blueberry, "
+                    name="flavor"
                     placeholder = "Flavor?"
-                    // value = {props.flavor}
+                    value = {props.flavor}
                     onChange = {handleChanges}
                     />
                 </label>
@@ -115,5 +118,12 @@ export const RecForm = (props) => {
 
 
 }
- 
+const mapStateToProps = (state) => {
+  return {
+    symptom: state.recommendation.symptom,
+    strain: state.recommendation.strain,
+    flavor: state.recommendation.flavor
+  }
+}
 
+export default connect(mapStateToProps, {recommendStart, recommendation })(RecForm);
