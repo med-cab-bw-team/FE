@@ -56,7 +56,10 @@ export const RecommendationReducer = (state = initialRecommend, action) => {
                 [action.payload.targetName]: action.payload.targetValue
             }
         case RECOMMEND_SUCCESS:
-            return state
+            return {
+                ...state,
+                strain: action.payload
+            }
         case RECOMMEND_FAIL:
             return {
                 ...state,
