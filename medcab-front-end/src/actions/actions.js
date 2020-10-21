@@ -74,5 +74,12 @@ export const recommendStart = (e) => (dispatch) => {
 
 export const recommendation = (state) => (dispatch) => {
     console.log(state);
-    dispatch({type: RECOMMEND_SUCCESS, payload: state});
+    axios.post('https://greengardenapi.herokuapp.com/recommendation/', state)
+        .then(res => {
+            dispatch({type: RECOMMEND_SUCCESS, payload: res});
+        })
+        .catch(err => {
+            console.error(err);
+            dispatch({type: RECOMMEND_FAIL, payload: err});
+        })
 }
