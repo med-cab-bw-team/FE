@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom';
 
 const Foot = styled.div `
     color: red;
@@ -13,9 +14,19 @@ const Foot = styled.div `
 `
 
 export const Footer = () => {
+    const history = useHistory();
+
+    const handleChanges = (e) => {
+        e.persist();
+        window.localStorage.clear(); 
+        history.push('/')
+        
+      };
+
 
     return(
         <Foot>
+        <button onClick={handleChanges}> Sign out </button>
          © Weed Weed Weed 2020
         </Foot>
     )
