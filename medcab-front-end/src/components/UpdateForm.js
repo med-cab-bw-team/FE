@@ -97,7 +97,7 @@ const ButtonStyling = styled.button`
                 name="password"
                 id="password"
                 type="password"
-                 /* value={} */
+                value={props.password} 
                 placeholder="Password"
                 onChange={handleChanges}
                 />
