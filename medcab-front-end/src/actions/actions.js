@@ -93,7 +93,7 @@ export const recommendation = (state) => (dispatch) => {
 
 
 export const userUpdateStart = (e) => (dispatch) => {
-    dispatch({type: userUpdateStart, payload: {
+    dispatch({type: USER_UPDATE_START, payload: {
         targetName: e.target.name,
         targetValue: e.target.value
     }})
