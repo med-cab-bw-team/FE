@@ -59,6 +59,7 @@ const ButtonStyling = styled.button`
 
 
     const handleChanges = e => {
+        e.persist();
       props.userUpdateStart(e);
     };
 
