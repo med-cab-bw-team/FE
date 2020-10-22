@@ -4,6 +4,8 @@ import styled from "styled-components";
 import HeaderAuth from './HeaderAuth';
 import {connect} from 'react-redux';
 
+import {userUpdateStart, userUpdate} from '../actions/actions';
+
 
 const RecStyled = styled.div `
 
@@ -57,16 +59,16 @@ const ButtonStyling = styled.button`
 
 
     const handleChanges = e => {
-      
+      props.userUpdateStart(e);
     };
 
 
     const handleSubmit = e => {
         e.preventDefault();
-        
-          /* setTimeout(()=>{
+        props.userUpdate({password: props.password});
+          setTimeout(()=>{
       history.push('/')
-    },1500)  */
+    },1500) 
     }
 
     return(
@@ -119,10 +121,10 @@ const ButtonStyling = styled.button`
 }
 const mapStateToProps = (state) => {
   return {
-
+    password: state.update.password
   }
 }
 
-export default UpdateForm;
 
- /* export default connect(mapStateToProps, {})(UpdateForm); */
+
+ export default connect(mapStateToProps, {userUpdateStart, userUpdate})(UpdateForm);
