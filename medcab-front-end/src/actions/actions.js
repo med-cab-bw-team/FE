@@ -99,7 +99,7 @@ export const userUpdateStart = (e) => (dispatch) => {
     }})
 }
 
-export const userUpdate = (state) => {
+export const userUpdate = (state) => (dispatch) => {
     const id = localStorage.getItem('id');
     axiosWithAuth().put(`api/users/${id}`, state)
         .then(res => {
