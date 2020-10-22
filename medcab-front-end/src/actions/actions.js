@@ -108,6 +108,6 @@ export const userUpdate = (state) => {
         })
         .catch(err => {
             console.error(err);
-            dispatch({type: USER_UPDATE_FAIL, payload: err})
+            dispatch({type: USER_UPDATE_FAIL, payload: err});
         })
 }
