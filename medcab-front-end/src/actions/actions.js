@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {axiosWithAuth} from '../api/axiosWithAuth';
 
 
 export const REGISTRATION_START = 'REGISTRATION_START';
@@ -14,6 +15,10 @@ export const RECOMMEND_FAIL = 'RECOMMEND_FAIL';
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
+
+export const USER_UPDATE_START = 'USER_UPDATE_START';
+export const USER_UPDATE_SUCCESS = 'USER_UPDATE_SUCCESS';
+export const USER_UPDATE_FAIL = 'USER_UPDATE_FAIL';
 
 
 export const registrationStart = (e) => (dispatch) => {
@@ -83,5 +88,26 @@ export const recommendation = (state) => (dispatch) => {
         .catch(err => {
             console.error(err);
             dispatch({type: RECOMMEND_FAIL, payload: err});
+        })
+}
+
+
+export const userUpdateStart = (e) => (dispatch) => {
+    dispatch({type: userUpdateStart, payload: {
+        targetName: e.target.name,
+        targetValue: e.target.value
+    }})
+}
+
+export const userUpdate = (state) => (dispatch) => {
+    const id = localStorage.getItem('id');
+    axiosWithAuth().put(`api/users/${id}`, state)
+        .then(res => {
+            console.log(res);
+
+        })
+        .catch(err => {
+            console.error(err);
+            dispatch({type: USER_UPDATE_FAIL, payload: err});
         })
 }
