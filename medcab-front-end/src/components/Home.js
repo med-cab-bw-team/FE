@@ -33,6 +33,7 @@ background-image: url(${img}) ;
 `;
 export const Home = () => {
 
+  
 
   const onCommentClick = () => alert('You clicked comments')
   const onLikesClick = () => alert('You clicked comments')
