@@ -56,10 +56,11 @@ const ButtonStyling = styled.button`
 
  const UpdateForm = (props) => {
     const history = useHistory();
+    console.log(props);
 
 
     const handleChanges = e => {
-        e.persist();
+      e.persist();
       props.userUpdateStart(e);
     };
 
