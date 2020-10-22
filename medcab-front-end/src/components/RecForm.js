@@ -65,10 +65,10 @@ const ButtonStyling = styled.button`
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.recommendation(`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`);
-        setTimeout(()=>{
+        props.recommendation('`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`');
+          setTimeout(()=>{
       history.push('/login')
-    },1500)
+    },1500) 
     }
 
     return(

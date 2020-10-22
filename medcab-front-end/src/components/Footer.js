@@ -10,8 +10,6 @@ const Foot = styled.div `
             width: 100%; 
             height: 40px;
             background: rgb(0, 151, 96, .75);
-   
-    
 `
 
 export const Footer = () => {
@@ -21,5 +19,4 @@ export const Footer = () => {
          © Weed Weed Weed 2020
         </Foot>
     )
-
 }

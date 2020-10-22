@@ -15,6 +15,7 @@ export const CarouselImg = () => (
         slidesToShow={3}
         scaleOnFocus={1}
         centerPadding={1}
+        
     >
        
         <img src="https://images.unsplash.com/photo-1536819114556-1e10f967fb61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"/>

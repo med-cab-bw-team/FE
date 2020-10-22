@@ -7,6 +7,7 @@ import Card from './Card'
 import img from '../images/loginPic.jpg'
 
 
+
 const StyledRoot = styled.div`
   padding: 50px 12px;
 `
@@ -17,6 +18,7 @@ const StyledContainer = styled.div`
   margin: auto;
   color: black;
 `
+
 const HomeDiv = styled.div `
 background-image: url(${img}) ; 
   -webkit-background-size: cover;
@@ -27,7 +29,6 @@ background-image: url(${img}) ;
   background-position: center;
   background-attachment:fixed;
   margin-bottom: 45px;
-  
 
 `;
 export const Home = () => {
