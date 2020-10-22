@@ -54,7 +54,8 @@ export const login = (state) => (dispatch) => {
         .then(res => {
             console.log(res, "it's working?");
             dispatch({type: LOGIN_SUCCESS, payload: res.data.token});
-            localStorage.setItem('token', res.data.token)
+            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('id', res.data.user.id);
             
         })
         .catch(err => {
