@@ -110,7 +110,7 @@ export const userUpdate = (newPass) => (dispatch) => {
     axiosWithAuth().put(`api/users/${id}`, {
         username: username,
         email: email,
-        state: state,
+        state_abbreviation: state,
         password: newPass
     })
         .then(res => {
