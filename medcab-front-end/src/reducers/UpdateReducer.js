@@ -1,7 +1,14 @@
 import { USER_UPDATE_START, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL } from '../actions/actions';
 
 
+const username = localStorage.getItem('username');
+const email = localStorage.getItem('email');
+const state = localStorage.getItem('state');
+
 const initialUpdate = {
+    username: username,
+    email: email,
+    state_abbreviation: state,
     password: '',
     error: ''
 }
