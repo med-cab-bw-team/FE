@@ -70,7 +70,7 @@ const ButtonStyling = styled.button`
         props.userUpdate({
           username: props.username,
           email: props.email,
-          state: props.state,
+          state_abbreviation: props.state,
           password: props.password
         });
           setTimeout(()=>{
