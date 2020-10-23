@@ -67,7 +67,7 @@ const ButtonStyling = styled.button`
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.userUpdate({password: props.password});
+        props.userUpdate(props.password);
           setTimeout(()=>{
       history.push('/')
     },1500) 

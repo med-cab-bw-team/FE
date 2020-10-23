@@ -60,7 +60,10 @@ export const login = (state) => (dispatch) => {
             console.log(res, "it's working?");
             dispatch({type: LOGIN_SUCCESS, payload: res.data.token});
             localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user', res.data.user);
+            localStorage.setItem('id', res.data.user.id);
+            localStorage.setItem('email', res.data.user.email);
+            localStorage.setItem('username', res.data.user.username);
+            localStorage.setItem('state', res.data.user.state);
             
         })
         .catch(err => {
@@ -101,7 +104,15 @@ export const userUpdateStart = (e) => (dispatch) => {
 
 export const userUpdate = (newPass) => (dispatch) => {
     const id = localStorage.getItem('id');
-    axiosWithAuth().put(`api/users/${id}`, newPass)
+    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+    const state = localStorage.getItem('state');
+    axiosWithAuth().put(`api/users/${id}`, {
+        username: username,
+        email: email,
+        state: state,
+        password: newPass
+    })
         .then(res => {
             console.log(res);
 
