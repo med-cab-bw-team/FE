@@ -102,17 +102,12 @@ export const userUpdateStart = (e) => (dispatch) => {
     }})
 }
 
-export const userUpdate = (newPass) => (dispatch) => {
+export const userUpdate = (state) => (dispatch) => {
     const id = localStorage.getItem('id');
-    const username = localStorage.getItem('username');
-    const email = localStorage.getItem('email');
-    const state = localStorage.getItem('state');
-    axiosWithAuth().put(`api/users/${id}`, {
-        username: username,
-        email: email,
-        state_abbreviation: state,
-        password: newPass
-    })
+    // const username = localStorage.getItem('username');
+    // const email = localStorage.getItem('email');
+    // const state = localStorage.getItem('state');
+    axiosWithAuth().put(`api/users/${id}`, state)
         .then(res => {
             console.log(res);
 

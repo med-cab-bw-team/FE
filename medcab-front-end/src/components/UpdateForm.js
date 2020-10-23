@@ -67,7 +67,12 @@ const ButtonStyling = styled.button`
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.userUpdate(props.password);
+        props.userUpdate({
+          username: props.username,
+          email: props.email,
+          state_abbreviation: props.state,
+          password: props.password
+        });
           setTimeout(()=>{
       history.push('/')
     },1500) 
@@ -123,6 +128,9 @@ const ButtonStyling = styled.button`
 }
 const mapStateToProps = (state) => {
   return {
+    username: state.update.username,
+    email: state.update.email,
+    state: state.update.state,
     password: state.update.password
   }
 }
