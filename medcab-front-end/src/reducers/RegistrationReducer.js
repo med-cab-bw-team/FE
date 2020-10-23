@@ -18,6 +18,7 @@ const initialRecommend = {
     symptom: '',
     strain: '',
     flavor: '',
+    recommendations: [],
     error: ''
 }
 
@@ -58,7 +59,7 @@ export const RecommendationReducer = (state = initialRecommend, action) => {
         case RECOMMEND_SUCCESS:
             return {
                 ...state,
-                strain: action.payload
+                recommendations: action.payload
             }
         case RECOMMEND_FAIL:
             return {
