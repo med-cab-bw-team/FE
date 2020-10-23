@@ -66,10 +66,14 @@ const ButtonStyling = styled.button`
     const handleSubmit = e => {
         e.preventDefault();
         props.recommendation('`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`');
-          setTimeout(()=>{
-      history.push('/login')
-    },1500) 
+         setTimeout(()=>{
+          console.log(recommendation.dispatch)
+    },1500)  
+    
     }
+
+ 
+
 
     return(
         <div>
@@ -113,11 +117,11 @@ const ButtonStyling = styled.button`
                 <ButtonStyling type="submit" disabled="">
             submit {""}
           </ButtonStyling>
-
-
-
             </form>
         </RecStyled>
+
+
+
         </div>
 
 
