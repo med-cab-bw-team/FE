@@ -66,10 +66,16 @@ const ButtonStyling = styled.button`
     const handleSubmit = e => {
         e.preventDefault();
         props.recommendation('`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`');
-          setTimeout(()=>{
-      history.push('/login')
-    },1500) 
+         setTimeout(()=>{
+          /* console.log(recommendation.dispatch) */
+          console.log(props.recommendations)
+    },1500)  
+    
     }
+
+    
+
+
 
     return(
         <div>
@@ -113,23 +119,25 @@ const ButtonStyling = styled.button`
                 <ButtonStyling type="submit" disabled="">
             submit {""}
           </ButtonStyling>
-
-
-
             </form>
         </RecStyled>
+       <div> SMOKE THiS: 
+            {props.recommendations.map((data) => (
+            <div> { data.Strain}</div>
+          ))}
+      </div>
         </div>
 
 
     )
-
 
 }
 const mapStateToProps = (state) => {
   return {
     symptom: state.recommendation.symptom,
     strain: state.recommendation.strain,
-    flavor: state.recommendation.flavor
+    flavor: state.recommendation.flavor,
+    recommendations: state.recommendation.recommendations
   }
 }
 

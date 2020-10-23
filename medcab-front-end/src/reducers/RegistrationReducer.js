@@ -57,6 +57,8 @@ export const RecommendationReducer = (state = initialRecommend, action) => {
                 [action.payload.targetName]: action.payload.targetValue
             }
         case RECOMMEND_SUCCESS:
+            console.log("LOOK HERE", action.payload)
+           
             return {
                 ...state,
                 recommendations: action.payload
