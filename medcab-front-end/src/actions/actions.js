@@ -61,6 +61,9 @@ export const login = (state) => (dispatch) => {
             dispatch({type: LOGIN_SUCCESS, payload: res.data.token});
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('id', res.data.user.id);
+            localStorage.setItem('email', res.data.user.email);
+            localStorage.setItem('username', res.data.user.username);
+            localStorage.setItem('state', res.data.user.state);
             
         })
         .catch(err => {
@@ -83,7 +86,7 @@ export const recommendation = (state) => (dispatch) => {
     axios.get(`https://greengardenapi.herokuapp.com/recommendation/${state}`)
         .then(res => {
             console.log(res);
-            dispatch({type: RECOMMEND_SUCCESS, payload: res});
+            dispatch({type: RECOMMEND_SUCCESS, payload: res.data});
         })
         .catch(err => {
             console.error(err);
@@ -101,6 +104,9 @@ export const userUpdateStart = (e) => (dispatch) => {
 
 export const userUpdate = (state) => (dispatch) => {
     const id = localStorage.getItem('id');
+    // const username = localStorage.getItem('username');
+    // const email = localStorage.getItem('email');
+    // const state = localStorage.getItem('state');
     axiosWithAuth().put(`api/users/${id}`, state)
         .then(res => {
             console.log(res);
