@@ -103,7 +103,7 @@ export const userUpdateStart = (e) => (dispatch) => {
 }
 
 export const userUpdate = (state) => (dispatch) => {
-    const id = localStorage.getItem('id');
+    const id = parseInt(localStorage.getItem('id'));
     // const username = localStorage.getItem('username');
     // const email = localStorage.getItem('email');
     // const state = localStorage.getItem('state');
