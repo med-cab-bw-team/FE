@@ -8,7 +8,7 @@ const state = localStorage.getItem('state');
 const initialUpdate = {
     username: username,
     email: email,
-    state_abbreviation: state,
+    state: state,
     password: '',
     error: ''
 }
