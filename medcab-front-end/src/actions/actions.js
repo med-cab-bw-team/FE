@@ -86,6 +86,7 @@ export const recommendation = (state) => (dispatch) => {
     axios.get(`https://greengardenapi.herokuapp.com/recommendation/${state}`)
         .then(res => {
             console.log(res);
+           
             dispatch({type: RECOMMEND_SUCCESS, payload: res.data});
         })
         .catch(err => {

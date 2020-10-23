@@ -67,12 +67,14 @@ const ButtonStyling = styled.button`
         e.preventDefault();
         props.recommendation('`I am feeling ${props.symptom}, I need ${props.strain}, and I prefer the flavor ${props.flavor}`');
          setTimeout(()=>{
-          console.log(recommendation.dispatch)
+          /* console.log(recommendation.dispatch) */
+          console.log(props.recommendations)
     },1500)  
     
     }
 
- 
+    
+
 
 
     return(
@@ -119,21 +121,23 @@ const ButtonStyling = styled.button`
           </ButtonStyling>
             </form>
         </RecStyled>
-
-
-
+       <div> SMOKE THiS: 
+            {props.recommendations.map((data) => (
+            <div> { data.Strain}</div>
+          ))}
+      </div>
         </div>
 
 
     )
-
 
 }
 const mapStateToProps = (state) => {
   return {
     symptom: state.recommendation.symptom,
     strain: state.recommendation.strain,
-    flavor: state.recommendation.flavor
+    flavor: state.recommendation.flavor,
+    recommendations: state.recommendation.recommendations
   }
 }
 
