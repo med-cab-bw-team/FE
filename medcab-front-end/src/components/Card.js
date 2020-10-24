@@ -39,6 +39,27 @@ const Description = styled.p`
     font-size: 0.75rem;
   }
 `
+const Type = styled.p`
+  color: black;
+  font-weight: 300;
+  @media (max-width: 500px) {
+    font-size: 0.75rem;
+  }
+`
+const Flavor = styled.p`
+  color: black;
+  font-weight: 300;
+  @media (max-width: 500px) {
+    font-size: 0.75rem;
+  }
+`
+const Effects = styled.p`
+  color: black;
+  font-weight: 300;
+  @media (max-width: 500px) {
+    font-size: 0.75rem;
+  }
+`
 
 const Actions = styled.div`
   color: black;
@@ -75,24 +96,22 @@ const Action = styled.button`
   }
 `
 
-const Card = ({
-  title,
-  description,
-  comments,
-  likes,
-  views,
-  actions,
-}) => (
+const Card = (props) => {
+  console.log(props);
+  return (
   <StyledContainer>
   <img src="https://cdn.pixabay.com/photo/2018/11/07/19/00/bud-3801028_1280.jpg"/>
-    <Title>{title}</Title>
-    <Description>{description}</Description>
+    <Title>{props.title}</Title>
+    <Description>{props.description}</Description>
+    <Type>{props.type}</Type>
+    <Flavor>{props.flavor}</Flavor>
+    <Effects>{props.effects}</Effects>
     <Actions>
-      {actions.map(({ label }) => (
+      {props.actions.map(({ label }) => (
         <Action>{label}</Action>
       ))}
     </Actions>
   </StyledContainer>
-)
+  )}
 
 export default Card

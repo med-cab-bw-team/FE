@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import "./App.css";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
-import {Home} from './components/Home'
+import Home from './components/Home'
 import {Footer} from './components/Footer'
 import RecForm from './components/RecForm'
 import UpdateForm from './components/UpdateForm'
