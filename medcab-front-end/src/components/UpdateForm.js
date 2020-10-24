@@ -86,7 +86,8 @@ const ButtonStyling = styled.button`
       .then((res) => {
         console.log("Delete success", res)
         setTimeout(()=>{
-      history.push('/')
+          window.localStorage.clear(); 
+          history.push('/')
     },1500) 
 
       })
