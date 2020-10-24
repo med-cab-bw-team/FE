@@ -76,7 +76,7 @@ function HeaderAuth() {
      
           <NavRight>
            <a href="/weed4me"> Weed4me </a> 
-           <a href="/favorites"> Favorites </a> 
+           <a href="/update"> Update </a> 
           </NavRight>
     </Nav>
   );
