@@ -90,7 +90,7 @@ const LoginForm = (props) => {
     event.preventDefault();
     props.login({username: props.username, password: props.password}); 
     setTimeout(()=>{
-      history.push('/')
+      history.push('/weed4me')
     },1500)
   };
 

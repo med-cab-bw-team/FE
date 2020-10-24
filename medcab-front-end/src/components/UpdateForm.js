@@ -82,7 +82,7 @@ const ButtonStyling = styled.button`
       const state = localStorage.getItem('state');
     
       axiosWithAuth()
-      .delete(`https://med-cab-bw.herokuapp.com/api/users/{$id}`, {})
+      .delete(`https://med-cab-bw.herokuapp.com/api/users/${id}`)
       .then((res) => {
         console.log("Delete success", res)
         setTimeout(()=>{

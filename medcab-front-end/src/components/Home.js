@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { FaCommentAlt, FaThumbsUp, FaRegEye } from 'react-icons/fa'
 import Card from './Card'
 import img from '../images/loginPic.jpg'
+import {connect} from 'react-redux'
+
 
 
 
@@ -31,7 +33,7 @@ background-image: url(${img}) ;
   margin-bottom: 45px;
 
 `;
-export const Home = () => {
+const Home = (props) => {
 
   
 
@@ -73,6 +75,18 @@ export const Home = () => {
             <CarouselImg /> 
             <StyledRoot>
       <StyledContainer>
+        {props.recommendations.map(recommendation => {
+          console.log(recommendation.Strain);
+          return(
+          <Card
+          title={recommendation.Strain}
+          description={recommendation.Description}
+          type={recommendation.Type}
+          flavor={recommendation.Flavor}
+          effects={recommendation.Effects}
+          actions={buttons}
+        />
+        )})}
         <Card
           title=" Lambda Kush "
           description=" Lambda Kush is best known by developers and helps those who are seconds away of smashing through their computer screens. This strain has a potency level that will get you high as a kite. Beware that once you indulge in the strain you may not remember what you were coding.  ."
@@ -84,3 +98,11 @@ export const Home = () => {
     )
 }
 
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    recommendations: state.recommendation.recommendations
+  }
+}
+
+export default connect(mapStateToProps, {})(Home);

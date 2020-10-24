@@ -80,7 +80,7 @@ const SignUpForm = (props) => {
     event.preventDefault();
     props.register({username: props.username, password: props.password, email: props.email, firstName: props.firstName, lastName: props.lastName, currentCity: props.currentCity, state_abbreviation: props.state_abbreviation});
     setTimeout(()=>{
-      history.push('/weed4me')
+      history.push('/')
     },1500)
     
     
