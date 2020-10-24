@@ -3,6 +3,8 @@ import {useHistory} from "react-router";
 import styled from "styled-components";
 import HeaderAuth from './HeaderAuth';
 import {connect} from 'react-redux';
+import axios from 'axios'
+import {axiosWithAuth} from '../api/axiosWithAuth'
 
 import {userUpdateStart, userUpdate} from '../actions/actions';
 
@@ -50,10 +52,6 @@ const ButtonStyling = styled.button`
   transform: translate(0, -5px);
 `;
 
-
-
-
-
  const UpdateForm = (props) => {
     const history = useHistory();
     console.log(props);
@@ -77,12 +75,31 @@ const ButtonStyling = styled.button`
       history.push('/')
     },1500) 
     }
+    const deleteSubmit = e =>{
+      const id = parseInt(localStorage.getItem('id'));
+      const username = localStorage.getItem('username');
+      const email = localStorage.getItem('email');
+      const state = localStorage.getItem('state');
+    
+      axiosWithAuth()
+      .delete(`https://med-cab-bw.herokuapp.com/api/users/{$id}`, {})
+      .then((res) => {
+        console.log("Delete success", res)
+        setTimeout(()=>{
+      history.push('/')
+    },1500) 
+
+      })
+      .catch((err) => {
+        console.log(err, "error at delete")
+        console.log(id)
+      })
+    }
 
     return(
         <div>
         <HeaderAuth/>
         <RecStyled>
-
             <form onSubmit={handleSubmit}>
             <label htmlFor="email">
                 Enter Current Email:
@@ -109,22 +126,22 @@ const ButtonStyling = styled.button`
                 onChange={handleChanges}
                 />
             </label>
+            <br></br>
+                <br></br>
                
 
                 <ButtonStyling type="submit" disabled="">
             submit {""}
           </ButtonStyling>
-
-
-
             </form>
         </RecStyled>
+        <br></br>
+                <br></br>
+                <div>
+                  <button onClick={deleteSubmit}> Delete My Account </button>
+                </div>
         </div>
-
-
     )
-
-
 }
 const mapStateToProps = (state) => {
   return {
