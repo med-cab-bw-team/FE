@@ -160,7 +160,7 @@ const SignUpForm = (props) => {
             <input
               name="password"
               id="password"
-              type="text"
+              type="password"
               value={props.password}
               placeholder="please enter a password."
               onChange={handleChanges}
